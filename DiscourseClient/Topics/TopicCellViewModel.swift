@@ -18,6 +18,5 @@ class TopicCellViewModel {
         self.topic = topic
         self.textLabelText = self.topic.fancyTitle
         self.topicClosed = self.topic.closed
-        // TODO: Asignar textLabelText, el título del topic
     }
 }

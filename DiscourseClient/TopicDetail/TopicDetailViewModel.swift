@@ -27,6 +27,7 @@ class TopicDetailViewModel {
     var labelTopicNameText: String?
     var labelTopicNumberPostsText: String?
     var topicCanDelete: Bool?
+    var topicButtonIsHidden: Bool?
     
     weak var viewDelegate: TopicDetailViewDelegate?
     weak var coordinatorDelegate: TopicDetailCoordinatorDelegate?
@@ -57,8 +58,10 @@ class TopicDetailViewModel {
                 
                 if let topicCanDelete = singleTopicResponse?.details?.canDelete {
                     self?.topicCanDelete = topicCanDelete
+                    self?.topicButtonIsHidden = !topicCanDelete
                 }else {
                     self?.topicCanDelete = false
+                    self?.topicButtonIsHidden = true
                 }
                                 
                 self?.viewDelegate?.topicDetailFetched()

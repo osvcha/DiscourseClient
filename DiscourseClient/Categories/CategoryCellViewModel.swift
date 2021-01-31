@@ -9,11 +9,9 @@
 import Foundation
 
 class CategoryCellViewModel {
-    let category: Category
     var textLabelText: String?
     
     init(category: Category) {
-        self.category = category
-        self.textLabelText = self.category.name
+        self.textLabelText = category.name
     }
 }

@@ -168,9 +168,9 @@ class TopicDetailViewController: UIViewController {
         labelTopicID.text = viewModel.labelTopicIDText
         labelTopicTitle.text = viewModel.labelTopicNameText
         labelTopicNumberPosts.text = viewModel.labelTopicNumberPostsText
-        if let topicCanDelete = viewModel.topicCanDelete {
-            deleteTopicButton.isHidden = !topicCanDelete
-            if(topicCanDelete) {
+        if let topicButtonIsHidden = viewModel.topicButtonIsHidden {
+            deleteTopicButton.isHidden = topicButtonIsHidden
+            if(!topicButtonIsHidden) {
                 deleteTopicButton.backgroundColor = .red } else {
                     deleteTopicButton.backgroundColor =  .systemGray2
             }

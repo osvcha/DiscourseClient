@@ -15,6 +15,10 @@ class UserCell: UITableViewCell {
             textLabel?.text = viewModel.textLabelText
             
             viewModel.viewDelegate = self
+            
+            if let userImageData = viewModel.userImageData, let userImage: UIImage = UIImage(data: userImageData) {
+                imageView?.image = userImage
+            }
         
         }
     }
